@@ -33,12 +33,12 @@ function scalene(side1, side2, side3) {
 
 //jQuery shit
 
-$(document).ready(function () {
-  $("form").submit(function(event){
+$(document).ready(function (event) {
+  $("form").submit(function(){
     event.preventDefault();
-    let side1 = parseInt($('#side1Length').val());
-    let side2 = parseInt($('#side2Length').val());
-    let side3 = parseInt($('#side3Length').val());
+    let side1 = parseFloat($('#side1Length').val());
+    let side2 = parseFloat($('#side2Length').val());
+    let side3 = parseFloat($('#side3Length').val());
     let result = ""
 
     if (nTriangle(side1, side2, side3) === true) {
