@@ -34,13 +34,23 @@ function scalene(side1, side2, side3) {
 //jQuery shit
 
 $(document).ready(function () {
-  $("#forms").submit(function(event){
+  $("form").submit(function(event){
     event.preventDefault();
     let side1 = parseInt($('#side1Length').val());
     let side2 = parseInt($('#side2Length').val());
     let side3 = parseInt($('#side3Length').val());
+    let result = ""
 
-    let result = isosceles(side1, side2, side3);
+    if (nTriangle(side1, side2, side3) === true) {
+      result = "Not a Triangle";
+    } else if(equilateral(side1, side2, side3) === true) {
+      result = "Equilateral Triangle";
+    } else if(isosceles(side1, side2, side3) === true) {
+      result = "Isoceles Triangle";
+    } else {
+      result = "Scalene Triangle";
+    }
+
 
     $("#output-nTriangle").text(result);
   });
