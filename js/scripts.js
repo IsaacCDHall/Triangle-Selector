@@ -33,7 +33,7 @@ function scalene(side1, side2, side3) {
 
 //jQuery shit
 
-$(document).ready(function (event) {
+$(document).ready(function () {
   $("form").submit(function(){
     event.preventDefault();
     let side1 = parseFloat($('#side1Length').val());
